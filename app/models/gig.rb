@@ -1,3 +1,3 @@
-class Gig 
-  
+class Gig < ActiveRecord::Base
+
 end
