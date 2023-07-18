@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :artists, :gigs, :venues, :genres
+  namespace :api do
+    resources :gigs, only: [:index]
+  end
 end
