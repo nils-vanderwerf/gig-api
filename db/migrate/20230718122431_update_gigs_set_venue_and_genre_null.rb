@@ -4,5 +4,7 @@ class UpdateGigsSetVenueAndGenreNull < ActiveRecord::Migration[7.0]
   end
 
   def down
+    # If you want to rollback, you can add the necessary logic here.
+    # For this specific migration, there's no need to do anything in the rollback.
   end
 end
