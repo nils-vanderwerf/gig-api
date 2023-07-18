@@ -11,7 +11,7 @@ class GenresControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create genre" do
-    assert_difference("CreateGenre.count") do
+    assert_difference("Genre.count") do
       post create_genres_url, params: { create_genre: { address: @create_genre.address, name: @create_genre.name } }, as: :json
     end
 
@@ -29,7 +29,7 @@ class GenresControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy _genre" do
-    assert_difference("CreateGenre.count", -1) do
+    assert_difference("Genre.count", -1) do
       delete create_genre_url(@create_genre), as: :json
     end
 
