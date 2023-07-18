@@ -1,4 +1,3 @@
-class Gig < ApplicationRecord
-  belongs_to :venue
-  belongs_to :artist 
+class Genre < ApplicationRecord
+  has_many :gigs
 end

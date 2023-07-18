@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_18_101305) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_18_120818) do
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.string "genre"
@@ -30,10 +30,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_101305) do
     t.string "title"
     t.string "venue"
     t.date "date"
-    t.string "genre"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "venue_id"
+    t.integer "genre_id"
+    t.index ["genre_id"], name: "index_gigs_on_genre_id"
+    t.index ["venue_id"], name: "index_gigs_on_venue_id"
   end
 
   create_table "venues", force: :cascade do |t|
@@ -43,4 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_18_101305) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "gigs", "genres"
+  add_foreign_key "gigs", "venues"
 end
